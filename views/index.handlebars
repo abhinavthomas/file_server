@@ -1,0 +1,19 @@
+ <h2 class="page-header">Dashboard</h2>
+  <h3 align="center"><b>File List</b></h3>
+<script type="x-template" id="the-tpl">
+    {{#if files}}
+        <table>
+            {{#each files}}
+                <tr>
+                    <td>{{file}}</td>
+                    <td>{{links}}</td>
+                	<td>{{is_link}}</td>
+                </tr>
+            {{/each}}
+        </table>
+    {{else}}
+        <h3>No users found!</h3>
+    {{/if}}
+</script>
+</tbody>
+</table>
