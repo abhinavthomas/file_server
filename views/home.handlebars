@@ -2,9 +2,15 @@
 <p>Upload your files here</p>  
 <form method="POST" enctype="multipart/form-data">
 	<input type="file" class="form-control" name="myfile" /><br>
-	<label>File Name as uploaded : </label>	<input class="form-control" type="text" name="filename" /><br>
-	<label>Link : </label>	<input type="checkbox" name="is_file"> 
-	<input type="text" class="form-control" name ="link"/><br>
-	<input type="submit" name="submit" value="Upload">
+	<input type="submit" class="btn" name="submit" value="Upload">
 	
+</form>
+<br/>
+<form method="POST" enctype="multipart/form-data" action="/edit">
+	<p>Links are uploaded here</p>
+	<label>Name : </label>
+	<input type="text" class="form-control" name="file"> <br>
+	<label>Link : </label>
+	<input type="text" class="form-control" name ="links"/><br>
+	<input type="submit" class="btn" name="submit" value="Link">
 </form>

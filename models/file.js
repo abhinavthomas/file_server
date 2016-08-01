@@ -3,14 +3,10 @@ var mongoose = require('mongoose');
 // File Schema
 var FileSchema = mongoose.Schema({
 	file: {
-		type: String,
-		index:true
+		type: String
 	},
 	links: {
 		type: String
-	},
-	is_link: {
-		type: Boolean
 	}
 });
 

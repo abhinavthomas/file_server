@@ -9,7 +9,7 @@ function ensureAuthenticated(req, res, next){
 	if(req.isAuthenticated()){
 		return next();
 	} else {
-		//req.flash('error_msg','You are not logged in');
+		req.flash('error_msg','You are not logged in');
 		res.redirect('/users/login');
 	}
 }
@@ -26,7 +26,7 @@ router.get('/login', function(req, res){
 });
 
 // Register User
-router.post('/register', function(req, res){
+router.post('/register', ensureAuthenticated, function(req, res){
 	var name = req.body.name;
 	var email = req.body.email;
 	var username = req.body.username;
@@ -57,7 +57,6 @@ router.post('/register', function(req, res){
 
 		User.createUser(newUser, function(err, user){
 			if(err) throw err;
-			console.log(user);
 		});
 
 		req.flash('success_msg', 'You are registered and can now login');
